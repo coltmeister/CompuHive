@@ -17,7 +17,7 @@ angular.module('rv.app')
                 randNum = Math.floor((Math.random() * 500000000))
             }
             $scope.threadNumbers.currentNumber = "THIS THREAD --- Solution Found"
-            
+
         }
 
 
