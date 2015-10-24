@@ -4,5 +4,8 @@ angular.module('rv.app')
     })
 
     .controller('HomeCtrl', function($scope) {
-
+        $scope.threadNumbers = {
+            'thisThread': 0,
+            'newThread': 0
+        }
     })
