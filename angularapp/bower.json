@@ -20,7 +20,8 @@
   ],
   "dependencies": {
     "angular": "latest",
-    "angular-ui-router": "latest"
+    "angular-ui-router": "latest",
+    "d3": "latest"
   },
   "homepage": "http://reverb.io",
   "description": "Reverb.io Seed Application",

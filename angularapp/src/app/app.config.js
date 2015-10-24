@@ -9,9 +9,16 @@ angular.module('rv.app')
             .state('app', {
                 url: '',
                 templateUrl: '/app/app.html',
-                controller: 'AppCtrl'
-            });
+                controller: 'AppCtrl',
+                abstract: true
+            })
+
+            .state('app.home', {
+                url: '/home',
+                templateUrl: '/app/pages/home.html',
+                controller: 'HomeCtrl'
+            })
     })
     .run(function ($rootScope, $state) {
-        $state.go('app');
+        $state.go('app.home');
     });
