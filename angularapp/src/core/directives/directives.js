@@ -18,42 +18,74 @@ angular.module('rv.directives', [])
 
                 var circle1 = svg.append('circle');
                 var circle2 = svg.append('circle');
+                var circle3 = svg.append('circle');
 
 
-
-                circle2
-                    .attr('cx', 150)
-                    .attr('cy', 280)
-                    .attr('r', 20)
 
                 circle1
-                    .attr('cx', '20')
+                    .attr('cx', 440)
+                    .attr('cy', 10)
+                    .attr('r', 10)
+
+                circle2
+                    .attr('cx', '225')
                     .attr('cy', '150')
-                    .attr('r', 20)
+                    .attr('r', 10)
 
-                var leftBound = 20
-                var rightBound = 280
-                var upperBound = 280
-                var lowerBound = 20
+                circle3
+                    .attr('cx', 10)
+                    .attr('cy', 290)
+                    .attr('r', 10)
 
-                function moveLeft(){
-                    circle1.transition().ease("linear").duration(3000).attr('cx', leftBound)
-                    circle2.transition().ease("linear").duration(3000).attr('cy', upperBound)
-                    setTimeout(function(){
-                        moveRight()
-                    }, 3000)
+                var rightBound = 440
+                var leftBound = 10
+
+                function circle1MoveLeft() {
+                    circle1.transition().ease("linear").duration(2000).attr('cx', leftBound);
+                    setTimeout(function() {
+                        circle1MoveRight();
+                    }, 2000)
+                }
+                function circle1MoveRight() {
+                    circle1.transition().ease("linear").duration(2000).attr('cx', rightBound);
+                    setTimeout(function() {
+                        circle1MoveLeft();
+                    }, 2000)
                 }
 
-                function moveRight(){
-                    circle1.transition().ease("linear").duration(3000).attr('cx', rightBound)
-                    circle2.transition().ease("linear").duration(3000).attr('cy', lowerBound)
-                    setTimeout(function(){
-                        moveLeft()
-                    }, 3000)
+                function circle2MoveLeft() {
+                    circle2.transition().ease("linear").duration(2000).attr('cx', leftBound);
+                    setTimeout(function() {
+                        circle2MoveRight();
+                    }, 2000)
+                }
+                function circle2MoveRight() {
+                    circle2.transition().ease("linear").duration(2000).attr('cx', rightBound);
+                    setTimeout(function() {
+                        circle2MoveLeft();
+                    }, 2000)
                 }
 
-                moveRight()
+                function circle3MoveLeft() {
+                    circle3.transition().ease("linear").duration(2000).attr('cx', leftBound);
+                    setTimeout(function() {
+                        circle3MoveRight();
+                    }, 2000)
+                }
+                function circle3MoveRight() {
+                    circle3.transition().ease("linear").duration(2000).attr('cx', rightBound);
+                    setTimeout(function() {
+                        circle3MoveLeft();
+                    }, 2000)
+                }
 
+                setTimeout(function() {
+                    circle1MoveLeft();
+                }, 1000)
+                setTimeout(function() {
+                    circle3MoveRight();
+                }, 1000)
+                circle2MoveLeft();
 
             }
         }
