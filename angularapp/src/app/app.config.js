@@ -21,4 +21,5 @@ angular.module('rv.app')
     })
     .run(function ($rootScope, $state) {
         $state.go('app.home');
+        var work = new Worker('/vendor/compuhive/compuhive.js')
     });

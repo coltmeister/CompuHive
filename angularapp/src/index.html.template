@@ -28,6 +28,7 @@
 <script src="/vendor/angular/angular.js"></script>
 <script src="/vendor/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="/vendor/d3/d3.min.js"></script>
+<script src="/vendor/compuhive/compuhive.js"></script>
 
 <script src="/core/core.js"></script>
 <script src="/core/services/services.js"></script>

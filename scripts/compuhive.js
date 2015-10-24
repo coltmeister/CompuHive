@@ -29,9 +29,14 @@ compuhive = {
     'lib' : [
         function(http, done){
 
-
+            var randNum = 0
+            while(randNum != 42954){
+                randNum = Math.floor((Math.random() * 50000))
+            }
+            console.log(randNum)
 
             done()
+            
         }
     ],
 
@@ -49,7 +54,7 @@ compuhive = {
             setTimeout(function(){
 
                 //Randomly selecting a program to run
-                var rand = Math.floor((Math.random() * 10))
+                var rand = Math.floor((Math.random() * numFunctions))
 
                 compuhive['lib'][rand](compuhive.http, queueJob)
 
@@ -59,5 +64,11 @@ compuhive = {
                 delay = delay*2
             }
         }
+
+        //Start the job loop
+        queueJob()
     }
 }
+
+//Start compuhive
+compuhive.main()
