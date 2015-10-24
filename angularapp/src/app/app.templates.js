@@ -7,12 +7,12 @@ angular.module('rv.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/pages/home.html',
-    "<ball-animation></ball-animation>"
+    "<ball-animation></ball-animation><button type=button ng-click=startThisThread()>Start on current thread</button> <button type=button ng-click=startNewThread()>Start on new thread</button><h3>{{threadNumbers.currentNumber}}</h3>"
   );
 
 
   $templateCache.put('/app/templates/animationdemo.html',
-    "<div id=ball-animation></div>"
+    "<svg id=ball-animation width=300px height=300px></svg>"
   );
 
 }]);

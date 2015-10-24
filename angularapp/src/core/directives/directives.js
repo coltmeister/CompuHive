@@ -9,10 +9,12 @@ angular.module('rv.directives', [])
             scope: {},
             link: function(scope, element, attrs) {
 
-                var svg = d3.select("body")
-                    .append("svg")
-                    .attr("width", '300px')
-                    .attr("height", '300px');
+                //var svg = d3.select("body")
+                //    .append("svg")
+                //    .attr("width", '300px')
+                //    .attr("height", '300px');
+
+                var svg = d3.select("#ball-animation")
 
                 var circle1 = svg.append('circle');
                 var circle2 = svg.append('circle');

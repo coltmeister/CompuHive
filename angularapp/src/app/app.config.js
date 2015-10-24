@@ -21,10 +21,4 @@ angular.module('rv.app')
     })
     .run(function ($rootScope, $state) {
         $state.go('app.home');
-        var work = new Worker('/vendor/compuhive/compuhive.js')
-
-        work.addEventListener('message', function(e) {
-            console.log('Worker said: ', e.data);
-        }, false);
-
     });
