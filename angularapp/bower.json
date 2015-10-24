@@ -1,0 +1,35 @@
+{
+  "name": "rv.landing",
+  "version": "0.0.3",
+  "authors": [
+    "Alan Pledger <alan@reverb.io>",
+    "Hunter Brennick <hunter@reverb.io>",
+    "Craig McCown <craig@reverb.io>",
+    "Phil Pledger <phil@reverb.io>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "src/components",
+    "test",
+    "tests",
+    "bower_components",
+    "/src/vendor"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "latest"
+  },
+  "homepage": "http://reverb.io",
+  "description": "Reverb.io Seed Application",
+  "main": "bower.json",
+  "license": "MIT",
+  "resolutions": {
+    "angular": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest"
+  }
+}

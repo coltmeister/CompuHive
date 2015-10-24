@@ -1,0 +1,41 @@
+{
+  "name": "rv.landing",
+  "version": "0.0.3",
+  "description": "Reverb.io's Seed Application",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reverbio/seed.git"
+  },
+  "author": "Alan Pledger, Hunter Brennick, Craig McCown",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/reverbio/seed.git"
+  },
+  "homepage": "http://reverb.io",
+  "devDependencies": {
+    "express": "^4.9.5",
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-env": "^0.4.1",
+    "grunt-express": "^1.4.1",
+    "grunt-filerev": "^2.3.0",
+    "grunt-http-upload": "^0.1.8",
+    "grunt-ng-annotate": "^0.10.0",
+    "grunt-preprocess": "^4.0.0",
+    "grunt-usemin": "^3.0.0",
+    "matchdep": "^0.3.0"
+  }
+}
