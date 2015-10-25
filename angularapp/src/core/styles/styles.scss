@@ -19,26 +19,34 @@
   position: absolute;
   height: 75px;
   width: 300px;
-  left: 36%;
+  left: 34%;
   top: 35%;
   background-color: white;
-  color: #FFAC30;
+  color: rgb(251, 176, 64);
   border-radius: 45px;
   border-color: transparent;
   font: 26px calibri, sans-serif;
+}
+#buttonSwag1:hover {
+  background-color: rgb(254, 208, 158);
+  color: rgb(255, 255, 255);
 }
 
 #buttonSwag2 {
   position: absolute;
   height: 75px;
   width: 300px;
-  left: 36%;
+  left: 34%;
   top: 55%;
-  background-color: #FFAC30;
+  background-color: rgb(251, 176, 64);
   color: white;
   border-radius: 45px;
   border-color: transparent;
   font: 26px calibri, sans-serif;
+}
+#buttonSwag2:hover {
+  background-color: rgb(254, 208, 158);
+  color: rgb(255, 255, 255);
 }
 
 #ballAnimation {
