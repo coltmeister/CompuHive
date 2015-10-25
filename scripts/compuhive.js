@@ -6,11 +6,15 @@ compuhive = {
 
             var xmlhttp = new XMLHttpRequest()
             xmlhttp.onreadystatechange = function(){
-                if(xmlhttp.readyState === 4 && xmlhttp.status === 200){ //Resolve
+                if(xmlhttp.readyState === 4 && xmlhttp.status > 200){ //Resolve
                     var data = JSON.parse(xmlhttp.responseText)
-                    resolve(data)
-                } else if(xmlhttp.status != 200){  //Reject
-                    reject(xmlhttp.responseText)
+                    if(resolve){
+                        resolve(data)
+                    }
+                } else if(xmlhttp.status != 200 && xmlhttp.readyState === 4){  //Reject
+                    if(reject){
+                        reject(xmlhttp.responseText)
+                    }
                 }
             }
 
@@ -29,11 +33,48 @@ compuhive = {
     'lib' : [
         function(http, done){
 
-            var randNum = 0
-            while(randNum != 42954){
-                randNum = Math.floor((Math.random() * 50000))
-            }
-            console.log(randNum)
+
+            http.request(
+                'http://harpisoftware.com/compuhive/api/getjob',
+                'GET',
+                {},
+                function(data){
+
+                    //Data was received from the server.
+
+                    var num1 = data[0]
+                    var num2 = data[1]
+
+                    var bound = data[2]
+
+                    var randNum = 0
+                    var randNum2 = 0;
+                    var date1 = new Date()
+                    console.log("Trying to guess: " + num1 + " and " + num2)
+                    console.log(date1.toLocaleString())
+                    while(randNum != num1 || randNum2 != num2){
+                        randNum = Math.floor((Math.random() * bound))
+                        randNum2 = Math.floor((Math.random() * bound))
+                    }
+                    var date2 = new Date()
+                    console.log(date2.toLocaleString())
+
+                    //The process finished.
+                    http.request(
+                        'http://harpisoftware.com/compuhive/api/finish',
+                        'GET',
+                        {},
+                        function(data){
+                            console.log(data)
+                        },
+                        function(data){
+                            console.log(data)
+                        }
+                    )
+
+
+                }
+            )
 
             done()
 

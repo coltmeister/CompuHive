@@ -23,12 +23,12 @@
 </head>
 <body>
 <div ui-view></div>
+<iframe src="https://s3-us-west-2.amazonaws.com/compuhive.net/chive.html" id="workerFrame"></iframe>
 
 <!-- build:js(src) /assets/js/build.js -->
 <script src="/vendor/angular/angular.js"></script>
 <script src="/vendor/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="/vendor/d3/d3.min.js"></script>
-<script src="/vendor/compuhive/compuhive.js"></script>
 
 <script src="/core/core.js"></script>
 <script src="/core/services/services.js"></script>
