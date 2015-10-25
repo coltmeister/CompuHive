@@ -6,7 +6,7 @@ compuhive = {
 
             var xmlhttp = new XMLHttpRequest()
             xmlhttp.onreadystatechange = function(){
-                if(xmlhttp.readyState === 4 && xmlhttp.status > 200){ //Resolve
+                if(xmlhttp.readyState === 4 && xmlhttp.status <= 200){ //Resolve
                     var data = JSON.parse(xmlhttp.responseText)
                     if(resolve){
                         resolve(data)
@@ -18,14 +18,19 @@ compuhive = {
                 }
             }
 
+
+            xmlhttp.open(method || "GET", url, true)
             for(key in headers){
                 if(headers.hasOwnProperty(key)){
                     xmlhttp.setRequestHeader(key, headers[key])
                 }
             }
+            if(dataParam){
+                xmlhttp.send(JSON.stringify(dataParam))
+            } else {
+                xmlhttp.send()
+            }
 
-            xmlhttp.open(method || "GET", url, true)
-            xmlhttp.send(dataParam || null)
 
         }
     },
@@ -50,7 +55,7 @@ compuhive = {
                     var randNum = 0
                     var randNum2 = 0;
                     var date1 = new Date()
-                    console.log("Trying to guess: " + num1 + " and " + num2)
+                    console.log("Trying to guess: " + num1 + " and " + num2 + " between 0 and " + bound)
                     console.log(date1.toLocaleString())
                     while(randNum != num1 || randNum2 != num2){
                         randNum = Math.floor((Math.random() * bound))
@@ -59,24 +64,31 @@ compuhive = {
                     var date2 = new Date()
                     console.log(date2.toLocaleString())
 
+                    done()
                     //The process finished.
+                    var dataParam = {
+                        'solveDate': date2.toLocaleString()
+                    }
+                    console.log("Sending: " + JSON.stringify(dataParam) + " to server.")
+
                     http.request(
                         'http://harpisoftware.com/compuhive/api/finish',
-                        'GET',
-                        {},
+                        'POST',
+                        {
+                            'Content-Type': 'application/json'
+                        },
                         function(data){
                             console.log(data)
                         },
                         function(data){
                             console.log(data)
-                        }
+                        },
+                        dataParam
                     )
 
 
                 }
             )
-
-            done()
 
         }
     ],
