@@ -7,12 +7,12 @@ angular.module('rv.app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('/app/pages/home.html',
-    "<ball-animation></ball-animation><button type=button ng-click=startThisThread()>Start on current thread</button> <button type=button ng-click=startNewThread()>Start on new thread</button><h3>{{threadNumbers.currentNumber}}</h3>"
+    "<h3>{{threadNumbers.currentNumber}}</h3><div id=left-side><img src=\"/assets/img/CompuHive Logo 2.png\" id=peeen><ball-animation id=ballAnimation></ball-animation></div><div id=right-side><button type=button ng-click=startThisThread() id=buttonSwag1>SINGLE THREAD</button> <button type=button ng-click=startNewThread() id=buttonSwag2>MULTI THREAD</button></div>"
   );
 
 
   $templateCache.put('/app/templates/animationdemo.html',
-    "<svg id=ball-animation width=300px height=300px></svg>"
+    "<svg id=ball-animation width=450px height=300px></svg>"
   );
 
 }]);
