@@ -17,6 +17,7 @@ namespace compuhive_hackathon.Controllers
         public static int number1 = 0;
         public static int number2 = 0;
         public static int number3 = 0;
+        public static int key = 0;
         public static bool solved = false;
         public static FinishObject fo = new FinishObject
         
@@ -37,7 +38,7 @@ namespace compuhive_hackathon.Controllers
         [HttpPost]
         public String finishJob(FinishObject fo)
         {
-            if (!numbers.solved)
+            if (!numbers.solved && fo.token == numbers.key)
             {
                 numbers.solved = true;
                 numbers.fo = fo;
@@ -71,6 +72,7 @@ namespace compuhive_hackathon.Controllers
         {
             numbers.solved = false;
             numbers.fo.solveDate = "";
+            numbers.key++;
 
             return "The status has been reset.";
         }
@@ -93,7 +95,7 @@ namespace compuhive_hackathon.Controllers
         [HttpGet]
         public int[] getJob()
         {
-            return new int[] { numbers.number1, numbers.number2, numbers.number3 };
+            return new int[] { numbers.number1, numbers.number2, numbers.number3, numbers.key };
         }
     }
 }
