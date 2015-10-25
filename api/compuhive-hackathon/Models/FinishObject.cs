@@ -8,5 +8,6 @@ namespace compuhive_hackathon.Models
     public class FinishObject
     {
         public string solveDate { get; set; }
+        public int token { get; set; }
     }
 }
