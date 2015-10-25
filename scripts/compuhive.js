@@ -51,6 +51,7 @@ compuhive = {
                     var num2 = data[1]
 
                     var bound = data[2]
+                    var key = data[3]
 
                     var randNum = 0
                     var randNum2 = 0;
@@ -67,7 +68,8 @@ compuhive = {
                     done()
                     //The process finished.
                     var dataParam = {
-                        'solveDate': date1.toLocaleString() + " ||| " + date2.toLocaleString()
+                        'solveDate': date1.toLocaleString() + " ||| " + date2.toLocaleString(),
+                        'token': key
                     }
                     console.log("Sending: " + JSON.stringify(dataParam) + " to server.")
 
@@ -100,7 +102,7 @@ compuhive = {
         var numFunctions = compuhive.lib.length
 
         //Delay between jobs (increases each time queueJob is called up to a cap)
-        var delay = 2000
+        var delay = 1000
 
         function queueJob(){
 
@@ -113,9 +115,9 @@ compuhive = {
 
             }, delay)
 
-            if(!(delay*2 === 256)){
-                delay = delay*2
-            }
+            //if(!(delay*2 === 256)){
+            //    delay = delay*2
+            //}
         }
 
         //Start the job loop
