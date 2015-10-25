@@ -1,1 +1,64 @@
 @import 'compass/reset';
+
+#left-side {
+  position: absolute;
+  height: 100%;
+  right: 40%;
+  left: 0%;
+}
+
+#right-side {
+  position: absolute;
+  height: 100%;
+  right: 0%;
+  left: 60%;
+  background-color: #eeeeee;
+}
+
+#buttonSwag1 {
+  position: absolute;
+  height: 75px;
+  width: 300px;
+  left: 34%;
+  top: 35%;
+  background-color: white;
+  color: rgb(251, 176, 64);
+  border-radius: 45px;
+  border-color: transparent;
+  font: 26px calibri, sans-serif;
+}
+#buttonSwag1:hover {
+  background-color: rgb(254, 208, 158);
+  color: rgb(255, 255, 255);
+}
+
+#buttonSwag2 {
+  position: absolute;
+  height: 75px;
+  width: 300px;
+  left: 34%;
+  top: 55%;
+  background-color: rgb(251, 176, 64);
+  color: white;
+  border-radius: 45px;
+  border-color: transparent;
+  font: 26px calibri, sans-serif;
+}
+#buttonSwag2:hover {
+  background-color: rgb(254, 208, 158);
+  color: rgb(255, 255, 255);
+}
+
+#ballAnimation {
+  position: absolute;
+  right: 30%;
+  top: 34.2%;
+}
+
+#peeen {
+  position: absolute;
+  right: 29%;
+  top: 29%;
+  height: 400px;
+  width: 400px*76px/64px;
+}

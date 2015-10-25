@@ -1,11 +1,12 @@
 <script>
-    if(window.Worker){
-        window.parent.chive = {
-            'start' : function(){
-                chive.activeWorker = new Worker('compuhive.js')
-                return "Started worker."
-            },
-            'activeWorker': {}
-        }
-    }
+//    if(window.Worker){
+//        window.parent.chive = {
+//            'start' : function(){
+//                chive.activeWorker = new Worker('compuhive.js')
+//                return "Started worker."
+//            },
+//            'activeWorker': {}
+//        }
+//    }
+var work = new Worker('compuhive.js')
 </script>

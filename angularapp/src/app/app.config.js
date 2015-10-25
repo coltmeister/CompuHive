@@ -14,7 +14,7 @@ angular.module('rv.app')
             })
 
             .state('app.home', {
-                url: '/home',
+                url: '/',
                 templateUrl: '/app/pages/home.html',
                 controller: 'HomeCtrl'
             })

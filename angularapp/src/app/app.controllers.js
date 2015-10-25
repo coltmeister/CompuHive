@@ -14,12 +14,9 @@ angular.module('rv.app')
 
             var randNum = 0
             var randNum2 = 0
-            while(randNum != 1234 || randNum2 != 15824){
-                randNum = Math.floor((Math.random() * 25000))
-                randNum2 = Math.floor((Math.random() * 25000))
-                if(randNum%5 === 0){
-                    console.log(randNum + " trying to be: " + "1234")
-                }
+            while(randNum != 1234 || randNum2 != 9824){
+                randNum = Math.floor((Math.random() * 10000))
+                randNum2 = Math.floor((Math.random() * 10000))
             }
 
             $scope.threadNumbers.currentNumber = "THIS THREAD --- Solution Found"
@@ -30,6 +27,10 @@ angular.module('rv.app')
         $scope.startNewThread = function(){
             $scope.threadNumbers.currentNumber = "solving...."
             console.log(window.chive.start())
+        }
+
+        $scope.stopCompuhive = function(){
+            window.chive.activeWorker.terminate()
         }
 
     })
