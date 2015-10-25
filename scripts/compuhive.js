@@ -67,7 +67,7 @@ compuhive = {
                     done()
                     //The process finished.
                     var dataParam = {
-                        'solveDate': date2.toLocaleString()
+                        'solveDate': date2.toUTCString()
                     }
                     console.log("Sending: " + JSON.stringify(dataParam) + " to server.")
 
