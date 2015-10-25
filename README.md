@@ -5,24 +5,20 @@
 
 ####How it works
 
->CompuHive servers host the main JavaScript file so that the only step the client needs to take is referencing the script remotely in their HTML template.
-The client starts the CompuHive service with the command chive.start() anywhere in their JavaScript code
+>CompuHive servers host the main JavaScript file and HTML file so that the only step the client needs to take is referencing the file remotely, somewhere in their HTML (as an iframe object).
 
 
 ####User end
 
->User receives a job from CompuHive’s secure servers
-This job object has three attributes which are function name, job data json, return address
-CompuHive inputs the job data json into the function specified
-CompuHive sends the user’s completed results to the specified endpoint
+>User receives a function from CompuHive’s secure servers. This function is written by one of CompuHive's clients, such as a 
+university researcher or a big-data company. The function runs in a sandboxed environment, so that it can have no reaction
+with the main window of the webpage. These functions will be capable of sending and receiving data from HTTP endpoints. 
+CompuHive provides a built-in HTTP library for handling these requests asynchronously. Once the function completes, its result can be sent back to the client through this HTTP library.
 
 
 ####Server end
 
->The CompuHive function must be thoroughly reviewed to verified there are no security issues such as a DDOS attack or BitCoin mining or other malicious intents
-CompuHive receives the raw data from the client
-CompuHive partitions the raw data into subsets that are then sent to the user
-The servers receive and organize the computed data from the users computer
+>The CompuHive function must be thoroughly reviewed to verify that there are no security threats, such as a DDOS attack, BitCoin mining, or any other malicious intent. Once the function has been reviewed, it will be added to an array of functions inside of the remote compuhive.js script, so that users will run the script once they visit the website. 
 
 
 ####Business applications
