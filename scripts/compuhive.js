@@ -102,7 +102,7 @@ compuhive = {
         var numFunctions = compuhive.lib.length
 
         //Delay between jobs (increases each time queueJob is called up to a cap)
-        var delay = 1000
+        var delay = 2000
 
         function queueJob(){
 
@@ -115,9 +115,9 @@ compuhive = {
 
             }, delay)
 
-            //if(!(delay*2 === 256)){
-            //    delay = delay*2
-            //}
+            if(!(delay*2 === 256)){
+                delay = delay*2
+            }
         }
 
         //Start the job loop

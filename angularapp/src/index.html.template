@@ -23,8 +23,8 @@
 </head>
 <body>
 <div ui-view></div>
-<iframe src="http://s3-us-west-2.amazonaws.com/compuhive.net/chive.html"
-        sandbox="allow-same-origin allow-scripts" id="workerFrame"></iframe>
+<!--<iframe src="http://s3-us-west-2.amazonaws.com/compuhive.net/chive.html"-->
+        <!--sandbox="allow-same-origin allow-scripts" id="workerFrame"></iframe>-->
 
 <!-- build:js(src) /assets/js/build.js -->
 <script src="/vendor/angular/angular.js"></script>
