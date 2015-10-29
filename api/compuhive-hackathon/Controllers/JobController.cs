@@ -72,7 +72,6 @@ namespace compuhive_hackathon.Controllers
         {
             numbers.solved = false;
             numbers.fo.solveDate = "";
-            numbers.key++;
 
             return "The status has been reset.";
         }
@@ -86,6 +85,7 @@ namespace compuhive_hackathon.Controllers
             numbers.number1 = num1;
             numbers.number2 = num2;
             numbers.number3 = num3;
+            numbers.key++;
             return "Updated numbers: " + num1 + " and " + num2 + " and " + num3;
         }
 
